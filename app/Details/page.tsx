@@ -6,7 +6,6 @@ import { useSearchParams } from 'next/navigation';
 import FirstStyle from '../../styles/FirstPage.module.scss';
 import { FaArrowLeftLong } from "react-icons/fa6";
 
-
 const Main: React.FC = () => {
 
   const searchParams = useSearchParams();
@@ -26,48 +25,54 @@ const Main: React.FC = () => {
   }
 
   return (
-    <><div className={FirstStyle.buttonBoss}>
-          <Link href="/" >
+    <>
+      <div className={FirstStyle.buttonBoss}>
+        <Link href="/" >
           <button className={FirstStyle.buttonCont}>
             <div>
-          <FaArrowLeftLong />
-          </div>
-       <div> Back</div>
-        </button>
-      </Link>
-      </div>
-    <main className={FirstStyle.mainStyle}>
-      <div className={FirstStyle.sectionHolders}>
-      <section>
-      <img src={decodeURIComponent(flag)} alt={`Flag of ${countryName}`}  className={FirstStyle.countryImg}/>
-      </section>
-      <section className={FirstStyle.section2}>
-  
-      <ul>
-        
-      <h1>{countryName}</h1>
-        <li>Capital: <span>{capital}</span> </li>
-        <li>Population: <span> {population}</span></li>
-        <li>Region: <span>{region}</span> </li>
-        <li>Native Name: <span>{nativeName}</span></li>
-
- </ul>
- <ul className={FirstStyle.ul2}>
-        <li>Currency:<span>{currency}</span> </li>
-        <li>Top-Level Domain:<span> {topLevelDomain}</span> </li>
-        <li>Languages:<span>{languages.join(", ")}</span> </li>
-      </ul>
-      </section>
+              <FaArrowLeftLong />
+            </div>
+            <div> Back</div>
+          </button>
+        </Link>
       </div>
 
-      <div className={FirstStyle.borderCont}>
-        <h3>Border Countries:</h3>
-      <section> {borders.length > 0 && borders[0] !== "" ? borders.map((bord, index) => (
-  
-        <button key={index} >{bord}</button>
-       
-      )) : "No borders"}</section></div>
-    </main>
+      <main className={FirstStyle.mainStyle}>
+        <div className={FirstStyle.sectionHolders}>
+          <section>
+            <img 
+              src={flag ? decodeURIComponent(flag) : ""} 
+              alt={`Flag of ${countryName}`}  
+              className={FirstStyle.countryImg}
+            />
+          </section>
+          <section className={FirstStyle.section2}>
+            <ul>
+              <h1>{countryName}</h1>
+              <li>Capital: <span>{capital}</span></li>
+              <li>Population: <span>{population}</span></li>
+              <li>Region: <span>{region}</span></li>
+              <li>Native Name: <span>{nativeName}</span></li>
+            </ul>
+            <ul className={FirstStyle.ul2}>
+              <li>Currency: <span>{currency}</span></li>
+              <li>Top-Level Domain: <span>{topLevelDomain}</span></li>
+              <li>Languages: <span>{languages.join(", ")}</span></li>
+            </ul>
+          </section>
+        </div>
+
+        <div className={FirstStyle.borderCont}>
+          <h3>Border Countries:</h3>
+          <section>
+            {borders.length > 0 && borders[0] !== "" 
+              ? borders.map((bord, index) => (
+                  <button key={index}>{bord}</button>
+                ))
+              : "No borders"}
+          </section>
+        </div>
+      </main>
     </>
   );
 };
