@@ -1,0 +1,117 @@
+$DarkBl: hsl(209, 23%, 22%);
+$LightBg: hsl(0, 0%, 98%);
+.buttonCont {
+  padding: 0.8rem;
+  border-radius: 5px;
+  padding-right: 1.5rem;
+  box-shadow: 2px 2px 2px 2px solid $DarkBl;
+  border: none;
+  background-color: white;
+  color: hsl(209, 23%, 22%);
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.buttonBoss {
+  padding-left: 1.4rem;
+}
+.mainStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+}
+.countryImg {
+  width: 100%;
+  object-fit: cover;
+  height: 18rem;
+  margin: auto;
+}
+.section2 {
+  position: relative;
+  h1 {
+    text-align: start;
+  }
+  ul {
+    align-items: start;
+    position: relative;
+    right: 2rem;
+    // padding-right: 3rem;
+    li {
+      text-decoration: none;
+      font-size: 1rem;
+      padding-top: 1rem;
+      list-style: none;
+      span {
+        color: #a7aeb2; // if in LightMode the color will be #a9a9a9
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+.borderCont {
+  section {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    button {
+      border: none;
+      padding: 0.8rem;
+    }
+  }
+}
+// for firstPage.tsx scrictly
+// .LoadingCont {
+//   width: 100%;
+//   //   padding: 0 0 12 12;
+//   .Loader2 {
+//     width: 4rem;
+//     height: 4rem;
+//     color: #d3d3d3;
+//   }
+//   p {
+//     color: #d3d3d3;
+//     font-size: medium;
+//   }
+// }
+// .p2 {
+//   color: #d3d3d3;
+//   text-shadow: 2px 2px 2px 2px solid red;
+//   font-size: medium;
+// }
+// the styles for firstpge.tsx ends here
+@media (min-width: 1200px) {
+  .buttonBoss {
+    padding-left: 4rem;
+    padding-top: 3rem;
+  }
+  .sectionHolders {
+    // width: 95%;
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+    overflow-x: hidden;
+    .section2 {
+      display: flex;
+      gap: 4rem;
+    }
+  }
+  .countryImg {
+    width: 35rem;
+    // height: 20rem;
+    object-fit: cover;
+  }
+  .ul2 {
+    padding-top: 15%;
+  }
+  .borderCont {
+    position: relative;
+    margin-left: 48%;
+    bottom: 3rem;
+    font-size: 1rem;
+    gap: 2rem;
+    display: flex;
+  }
+}

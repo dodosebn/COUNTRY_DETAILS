@@ -1,0 +1,63 @@
+@mixin propz($pad, $bRadi, $wd, $ht) {
+  padding: $bRadi;
+  border-radius: $bRadi;
+  width: $wd;
+  height: $ht;
+}
+.inputDecl {
+  border: 1px solid #d3d3d3;
+  outline: none;
+  text-indent: 2rem;
+  font-size: 1rem;
+}
+.inputTexta {
+  @include propz(1rem, 5px, 100%, 1.9rem);
+  @extend .inputDecl;
+}
+.inputSele {
+  @extend .inputDecl;
+  @include propz(0.3rem, 3px, 80%, 2.1rem);
+}
+.inputSeleCont {
+  padding-top: 1rem;
+}
+.inputTextCont {
+  display: flex;
+  gap: 3rem;
+  position: relative;
+}
+.searchIcon {
+  display: none;
+}
+@media (max-width: 377px) {
+  .searchIcon {
+    position: absolute;
+    top: 19.5%;
+    left: 9%;
+    color: hsl(209, 23%, 22%);
+    display: block;
+  }
+}
+
+.AllInputCont {
+  padding: 1.7rem;
+}
+@media (min-width: 650px) {
+  .AllInputCont {
+    padding: 3rem;
+
+    .form {
+      display: flex;
+      justify-content: space-between;
+      .inputSele {
+        @include propz(0.3rem, 3px, 10rem, 2.1rem);
+      }
+      .inputTexta {
+        @include propz(1rem, 5px, 15rem, 1.9rem);
+      }
+    }
+  }
+  .inputSeleCont {
+    padding-top: 0rem;
+  }
+}
