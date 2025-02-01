@@ -1,11 +1,11 @@
 "use client";
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import FirstStyle from '../../styles/FirstPage.module.scss';
 import { FaArrowLeftLong } from "react-icons/fa6";
-
+import { SuspenseWrapper } from '@/components';
 const Main: React.FC = () => {
   const searchParams = useSearchParams();
   const countryName = searchParams.get("name");
@@ -24,7 +24,7 @@ const Main: React.FC = () => {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <SuspenseWrapper>
       <div className={FirstStyle.buttonBoss}>
         <Link href="/" >
           <button className={FirstStyle.buttonCont}>
@@ -72,7 +72,7 @@ const Main: React.FC = () => {
           </section>
         </div>
       </main>
-    </Suspense>
+    </SuspenseWrapper>
   );
 };
 
