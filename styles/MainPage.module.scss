@@ -1,0 +1,82 @@
+
+.bodyStuff, .constTop, .bodyWrap {
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.bodyWrap {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.constTop {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+}
+
+.constRule1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bodyRule1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.inputText {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.firstPage {
+  margin-top: 3rem;
+  border-radius: 7px;
+}
+
+.firstPage .firstDetails {
+  padding: 2.4rem;
+}
+
+.firstPage .firstDetails p {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 650px) {
+  .constTop {
+    padding: 1rem 3rem;
+  }
+
+  .bodyRule1 {
+    margin: auto;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .firstPage img {
+    width: 17.5rem;
+    height: 10rem;
+  }
+
+  .firstPage .firstDetails {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .firstPage .firstDetails p {
+    font-size: 0.96rem;
+  }
+
+  .firstPage .firstDetails h1 {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}

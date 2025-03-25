@@ -1,0 +1,83 @@
+@mixin propz($pad, $bRadi, $wd, $ht) {
+  padding: $pad;
+  border-radius: $bRadi;
+  width: $wd;
+  height: $ht;
+}
+.searchContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+.searchContainer {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+}
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: hsl(209, 23%, 22%);
+  pointer-events: none; 
+}
+
+.searchInput {
+  @include propz(1rem, 5px, 16rem, 1rem);
+  border: 1px solid #d3d3d3;
+  outline: none;
+  padding-left: 2.5rem; 
+  font-size: 1rem;
+}
+
+.inputSele {
+  @include propz(0.3rem, 3px, 100%, 3rem);
+  border: 1px solid #d3d3d3;
+  outline: none;
+  font-size: 1rem;
+  
+}
+
+.AllInputCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1.7rem;
+}
+
+.inputSeleCont {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 15rem;
+}
+
+@media (min-width: 650px) {
+  .AllInputCont {
+    padding: 3rem;
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    
+    .searchContainer {
+      width: 50%;
+    }
+    
+    .inputSeleCont {
+      margin-top: 0;
+      width: auto;
+    }
+    
+    .inputSele {
+      width: 15rem;
+    }
+  }
+}
